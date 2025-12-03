@@ -14,7 +14,7 @@ export default function Navbar() {
         <div className="flex flex-1 justify-start">
           <Link href="/">
             <Image
-              className="h-12 w-12 rounded-md border border-gray-200 bg-blue-300 transition-all duration-300 ease-in-out hover:scale-90 dark:bg-yellow-300"
+              className="h-15 w-15 rounded-md border border-gray-200 bg-blue-300 transition-all duration-300 ease-in-out hover:scale-90 dark:bg-yellow-300"
               src={navbarConfig.logo.src}
               alt={navbarConfig.logo.alt}
               width={navbarConfig.logo.width}

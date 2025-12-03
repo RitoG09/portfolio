@@ -157,19 +157,17 @@ export const ThemeToggleButton = ({
       variant="ghost"
       size="icon"
       className={cn(
-        "size-10 cursor-pointer  p-0 transition-all duration-300 active:scale-95",
+        "size-10 cursor-pointer p-0 transition-all duration-300 active:scale-95",
         className
       )}
       onClick={toggleTheme}
       aria-label="Toggle theme"
     >
       <span className="sr-only">Toggle theme</span>
-      {isDark ? <Moon className="size-4" /> : <Sun className="size-4" />}
+      {isDark ? <Moon className="size-5" /> : <Sun className="size-5" />}
     </Button>
   );
 };
-
-// ///////////////////////////////////////////////////////////////////////////
 
 export type AnimationVariant =
   | "circle"

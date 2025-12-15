@@ -3,10 +3,10 @@ import { Book, BriefcaseBusiness, NotebookText } from "lucide-react";
 
 export const navbarConfig = {
   logo: {
-    src: "/rito1.webp",
+    src: "/minion.webp",
     alt: "logo",
-    width: 100,
-    height: 100,
+    width: 80,
+    height: 80,
   },
   navItems: [
     {

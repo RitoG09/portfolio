@@ -10,6 +10,7 @@ import CV from "../svgs/CV";
 import Chat from "../svgs/Chat";
 import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
 import { Button } from "../ui/button";
+import RotatingText from "../RotatingText";
 
 const buttonIcons = {
   CV: CV,
@@ -61,7 +62,26 @@ export default function Hero() {
       {/* Text Area */}
       <div className="mt-8 flex flex-col gap-2">
         <h1 className="text-4xl font-bold">
-          Hi, I&apos;m {name} — <span className="text-secondary">{title}</span>
+          Hi, I&apos;m {name} -{" "}
+          <span className="text-secondary">
+            <RotatingText
+              texts={[
+                "A Fullstack web developer.",
+                "A Opensource Contributor.",
+                "A backend developer.",
+                "Enthusiastic about DevOps.",
+              ]}
+              mainClassName="inline-flex px-3 sm:px-2 md:px-3 bg-yellow-400 text-black overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-lg"
+              staggerFrom={"last"}
+              initial={{ y: "100%" }}
+              animate={{ y: 0 }}
+              exit={{ y: "-120%" }}
+              staggerDuration={0.025}
+              splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
+              transition={{ type: "spring", damping: 30, stiffness: 400 }}
+              rotationInterval={2000}
+            />
+          </span>
         </h1>
 
         <div className="mt-4 flex flex-wrap items-center gap-x-1.5 gap-y-2 text-base md:text-lg text-neutral-500 whitespace-pre-wrap">

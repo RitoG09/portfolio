@@ -1,4 +1,4 @@
-import Dock from "@/components/Dock";
+import Dock from "../ui/Dock";
 import { navbarConfig } from "@/config/Navbar";
 import Container from "./Container";
 import { ThemeToggleButton } from "./ThemeSwitch";

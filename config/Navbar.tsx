@@ -1,4 +1,4 @@
-import { DockItemData } from "@/components/Dock";
+import { DockItemData } from "../components/ui/Dock";
 import { Book, BriefcaseBusiness, NotebookText } from "lucide-react";
 
 export const navbarConfig = {

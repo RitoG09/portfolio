@@ -40,7 +40,7 @@ export const heroConfig = {
     {
       name: "React",
       href: "https://react.dev/",
-      component: "ReactIcon",
+      component: "React",
     },
     {
       name: "Next.js",

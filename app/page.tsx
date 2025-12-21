@@ -5,7 +5,7 @@ import Hero from "@/components/common/Hero";
 
 export default function Page() {
   return (
-    <Container className="min-h-screen py-16">
+    <Container className="min-h-screen">
       <Hero />
     </Container>
   );

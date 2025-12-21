@@ -42,6 +42,41 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+  --animate-orbit: orbit calc(var(--duration) * 1s) linear infinite;
+
+  @keyframes orbit {
+    from {
+      transform: rotate(var(--angle)) translateX(var(--radius));
+    }
+    to {
+      transform: rotate(calc(var(--angle) + 360deg)) translateX(var(--radius));
+    }
+  }
+
+  @keyframes orbit-reverse-smooth {
+    0% {
+      transform: rotate(var(--angle)) translateX(var(--radius));
+    }
+    50% {
+      transform: rotate(calc(var(--angle) - 180deg))
+        translateX(calc(var(--radius) + 8px));
+    }
+    100% {
+      transform: rotate(calc(var(--angle) - 360deg)) translateX(var(--radius));
+    }
+  }
+}
+/* Regular orbit */
+.animate-orbit {
+  animation: orbit var(--duration, 20s) linear infinite;
+  will-change: transform;
+}
+
+/* Reverse + smooth orbit */
+.animate-orbit-reverse {
+  animation: orbit-reverse-smooth var(--duration, 25s)
+    cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  will-change: transform;
 }
 
 :root {

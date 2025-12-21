@@ -3,7 +3,7 @@ import { parseTemplate } from "@/lib/hero";
 import { cn } from "@/lib/utils";
 import { Link } from "next-view-transitions";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import Container from "./Container";
 import Skill from "./Skill";
 import CV from "../svgs/CV";

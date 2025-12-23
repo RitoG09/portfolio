@@ -5,6 +5,8 @@ import { ViewTransitions } from "next-view-transitions";
 import ReactLenis from "lenis/react";
 import { ThemeProvider } from "next-themes";
 import Navbar from "@/components/common/Navbar";
+import Footer from "@/components/common/Footer";
+import { Toaster } from "react-hot-toast";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -43,7 +45,9 @@ export default function RootLayout({
           >
             <ReactLenis root>
               <Navbar />
+              <Toaster />
               {children}
+              <Footer />
             </ReactLenis>
           </ThemeProvider>
         </body>

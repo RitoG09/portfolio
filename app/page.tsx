@@ -1,8 +1,9 @@
 "use client";
 
+import BackToTop from "@/components/common/BackToTop";
 import Container from "@/components/common/Container";
-import Footer from "@/components/common/Footer";
 import Hero from "@/components/common/Hero";
+import Github from "@/components/landing/Github";
 import Skills from "@/components/landing/Skills";
 
 export default function Page() {
@@ -10,7 +11,8 @@ export default function Page() {
     <Container className="min-h-screen">
       <Hero />
       <Skills />
-      <Footer />
+      <Github />
+      {/* <BackToTop /> */}
     </Container>
   );
 }

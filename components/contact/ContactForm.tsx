@@ -44,8 +44,8 @@ const formSchema = z.object({
   }),
   message: z
     .string()
-    .min(10, {
-      message: "Message must be at least 10 characters.",
+    .min(6, {
+      message: "Message must be at least 6 characters.",
     })
     .max(1000, {
       message: "Message must not exceed 1000 characters.",

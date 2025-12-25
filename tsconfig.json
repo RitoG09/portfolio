@@ -29,6 +29,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-  ],
+, "components/3d/Lanyard.tsx"  ],
   "exclude": ["node_modules"]
 }

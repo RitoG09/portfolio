@@ -224,7 +224,8 @@ const generateSVG = (variant: AnimationVariant, start: AnimationStart) => {
     }
     const positionCoords = getPositionCoords(start);
     if (!positionCoords) {
-      throw new Error(`Invalid start position: ${start}`);
+      console.error(`Invalid start position: ${start}`);
+      return "";
     }
     const { cx, cy } = positionCoords;
     return `data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><defs><filter id="blur"><feGaussianBlur stdDeviation="2"/></filter></defs><circle cx="${cx}" cy="${cy}" r="18" fill="white" filter="url(%23blur)"/></svg>`;
@@ -237,7 +238,8 @@ const generateSVG = (variant: AnimationVariant, start: AnimationStart) => {
 
   const positionCoords = getPositionCoords(start);
   if (!positionCoords) {
-    throw new Error(`Invalid start position: ${start}`);
+    console.error(`Invalid start position: ${start}`);
+    return "";
   }
   const { cx, cy } = positionCoords;
 

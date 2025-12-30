@@ -13,7 +13,7 @@ export default function Page() {
     <Container className="min-h-screen">
       <Hero />
       <Skills />
-      <Projects />
+      <Projects />  
       <Github />
       <Meeting />
       {/* <BackToTop /> */}

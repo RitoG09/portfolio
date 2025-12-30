@@ -1,7 +1,7 @@
 import Container from "@/components/common/Container";
 import TextPressure from "@/components/ui/TextPressure";
 
-export default function Blogs() {
+export default function Achievements() {
   return (
     <Container className="min-h-screen flex items-center justify-center">
       <TextPressure

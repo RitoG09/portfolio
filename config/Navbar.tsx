@@ -17,7 +17,7 @@ export const navbarConfig = {
     {
       icon: <Book size={18} />,
       label: "Blogs",
-      href: "/blog",
+      href: "/blogs",
     },
     {
       icon: <NotebookText size={18} />,

@@ -12,9 +12,11 @@ export default function Projects() {
     <Container>
       <SectionHeading subHeading="Featured" heading="Projects" />
       <ProjectList className="mt-8" projects={projects.slice(0, 4)} />
-      <Button variant="outline" className="mt-4">
-        <Link href="/projects">View all projects</Link>
-      </Button>
+      <div className="mt-8 flex justify-center">
+        <Button variant="outline">
+          <Link href="/projects">Show all projects</Link>
+        </Button>
+      </div>
     </Container>
   );
 }

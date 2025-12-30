@@ -1,19 +1,19 @@
-import Container from '@/components/common/Container';
-import { ProjectContent } from '@/components/projects/ProjectContent';
-// import { ProjectNavigation } from '@/components/projects/ProjectNavigation';
-import ArrowLeft from '@/components/svgs/ArrowLeft';
-import { Button } from '@/components/ui/button';
-import { Separator } from '@/components/ui/separator';
+import Container from "@/components/common/Container";
+import { ProjectContent } from "@/components/projects/ProjectContent";
+import { ProjectNavigation } from "@/components/projects/ProjectNavigation";
+import ArrowLeft from "@/components/svgs/ArrowLeft";
+import { Button } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
 // import { siteConfig } from '@/config/Meta';
 import {
   getProjectCaseStudyBySlug,
   getProjectCaseStudySlugs,
   getProjectNavigation,
   getRelatedProjectCaseStudies,
-} from '@/lib/project';
-import { Metadata } from 'next';
-import { Link } from 'next-view-transitions';
-import { notFound } from 'next/navigation';
+} from "@/lib/project";
+import { Metadata } from "next";
+import { Link } from "next-view-transitions";
+import { notFound } from "next/navigation";
 
 interface ProjectCaseStudyPageProps {
   params: Promise<{
@@ -31,38 +31,38 @@ export async function generateStaticParams() {
 }
 
 // Generate metadata for each project case study
-export async function generateMetadata({
-  params,
-}: ProjectCaseStudyPageProps): Promise<Metadata> {
-  const { slug } = await params;
-  const caseStudy = await getProjectCaseStudyBySlug(slug);
+// export async function generateMetadata({
+//   params,
+// }: ProjectCaseStudyPageProps): Promise<Metadata> {
+//   const { slug } = await params;
+//   const caseStudy = await getProjectCaseStudyBySlug(slug);
 
-  if (!caseStudy || !caseStudy.frontmatter.isPublished) {
-    return {
-      title: 'Project Not Found',
-    };
-  }
+//   if (!caseStudy || !caseStudy.frontmatter.isPublished) {
+//     return {
+//       title: 'Project Not Found',
+//     };
+//   }
 
-  const { title, description, image } = caseStudy.frontmatter;
+//   const { title, description, image } = caseStudy.frontmatter;
 
-  return {
-    metadataBase: new URL(siteConfig.url),
-    title: `${title} - Project Case Study`,
-    description,
-    openGraph: {
-      title: `${title} - Project Case Study`,
-      description,
-      images: [image],
-      type: 'article',
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: `${title} - Project Case Study`,
-      description,
-      images: [image],
-    },
-  };
-}
+//   return {
+//     metadataBase: new URL(siteConfig.url),
+//     title: `${title} - Project Case Study`,
+//     description,
+//     openGraph: {
+//       title: `${title} - Project Case Study`,
+//       description,
+//       images: [image],
+//       type: 'article',
+//     },
+//     twitter: {
+//       card: 'summary_large_image',
+//       title: `${title} - Project Case Study`,
+//       description,
+//       images: [image],
+//     },
+//   };
+// }
 
 export default async function ProjectCaseStudyPage({
   params,
@@ -123,11 +123,11 @@ export default async function ProjectCaseStudyPage({
                           <div className="text-xs">
                             <div
                               className={`inline-block rounded px-2 py-1 text-xs font-medium ${
-                                project.frontmatter.status === 'completed'
-                                  ? 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400'
-                                  : project.frontmatter.status === 'in-progress'
-                                    ? 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-400'
-                                    : 'bg-gray-100 text-gray-800 dark:bg-gray-900/30 dark:text-gray-400'
+                                project.frontmatter.status === "completed"
+                                  ? "bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400"
+                                  : project.frontmatter.status === "in-progress"
+                                  ? "bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-400"
+                                  : "bg-gray-100 text-gray-800 dark:bg-gray-900/30 dark:text-gray-400"
                               }`}
                             >
                               {project.frontmatter.status

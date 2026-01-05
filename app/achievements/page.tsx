@@ -1,21 +1,23 @@
+import AchievementsSection from "@/components/achievements/AchievementsSection";
 import Container from "@/components/common/Container";
 import TextPressure from "@/components/ui/TextPressure";
 
 export default function Achievements() {
   return (
-    <Container className="min-h-screen flex items-center justify-center">
-      <TextPressure
-        text="Coming Soon"
-        flex={true}
-        alpha={false}
-        stroke={false}
-        width={true}
-        weight={true}
-        italic={true}
-        textColor="var(--foreground)"
-        strokeColor="#ff0000"
-        minFontSize={24}
-      />
+    <Container className="py-13">
+      <div className="space-y-8">
+        {/* Header */}
+        <div className="space-y-4 text-center">
+          <h1 className="text-4xl font-bold tracking-tight lg:text-5xl">
+            Achievements
+          </h1>
+          <p className="text-muted-foreground mx-auto max-w-2xl text-lg">
+            Hackathons, open source impact, and certifications.
+          </p>
+        </div>
+        {/* Achievements */}
+        <AchievementsSection />
+      </div>
     </Container>
   );
 }

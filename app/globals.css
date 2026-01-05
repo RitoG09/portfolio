@@ -282,3 +282,13 @@
 .prose h4 {
   font-size: calc(var(--blog-font-size) * 1.25);
 }
+
+.no-visible-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.no-visible-scrollbar::-webkit-scrollbar {
+  display: none;
+}

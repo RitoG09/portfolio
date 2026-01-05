@@ -44,7 +44,7 @@ export const projects: Project[] = [
     live: "",
     details: true,
     projectDetailsPageSlug: "/projects/trad-bot-automation",
-    isWorking: true,
+    isWorking: false,
   },
 
   {
@@ -66,7 +66,7 @@ export const projects: Project[] = [
     live: "",
     details: true,
     projectDetailsPageSlug: "/projects/portfolio",
-    isWorking: true,
+    isWorking: false,
   },
 
   {
@@ -140,7 +140,7 @@ export const projects: Project[] = [
       "An AI-powered trip planning application that generates personalized itineraries based on budget, duration, and preferences.",
     image: "/projects/portfolio.png",
     video: "",
-    link: "https://planova-web.onrender.com/",
+    link: "https://ai-tronics-ttit.vercel.app/",
     technologies: [
       { name: "React", icon: <React /> },
       { name: "TypeScript", icon: <TypeScript /> },
@@ -150,8 +150,8 @@ export const projects: Project[] = [
       { name: "Gemini", icon: <Gemini /> },
       { name: "Tailwind CSS", icon: <TailwindCss /> },
     ],
-    github: "https://github.com/RitoG09/Planova",
-    live: "https://planova-web.onrender.com/",
+    github: "https://github.com/RitoG09/Al-Tronics",
+    live: "https://ai-tronics-ttit.vercel.app/",
     details: true,
     projectDetailsPageSlug: "/projects/swasthya",
     isWorking: true,

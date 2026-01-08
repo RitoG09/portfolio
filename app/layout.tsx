@@ -7,6 +7,7 @@ import { ThemeProvider } from "next-themes";
 import Navbar from "@/components/common/Navbar";
 import Footer from "@/components/common/Footer";
 import { Toaster } from "react-hot-toast";
+import Chatbot from "@/components/common/Chatbot";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -47,6 +48,7 @@ export default function RootLayout({
               <Navbar />
               <Toaster />
               {children}
+              <Chatbot />
               <Footer />
             </ReactLenis>
           </ThemeProvider>

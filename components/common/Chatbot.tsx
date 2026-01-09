@@ -203,7 +203,7 @@ const Chatbot: React.FC = () => {
         <div className="flex items-center space-x-3">
           <Avatar className="border-primary h-8 w-8 border-2 bg-blue-300 dark:bg-yellow-300">
             <AvatarImage src="/jarvis2.jpg" alt="Assistant" />
-            <AvatarFallback>AI</AvatarFallback>
+            <AvatarFallback>jarvis-AI</AvatarFallback>
           </Avatar>
           <div>
             <h3 className="text-sm font-semibold">Jarvis</h3>

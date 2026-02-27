@@ -28,7 +28,7 @@ export const projects: Project[] = [
     title: "Trad Bot Automation",
     description:
       "An automation system for trade alerts and workflows, focusing on backend reliability, scheduling, and real-time execution.",
-    image: "/projects/portfolio.png",
+    image: "/projects/tradbot.png",
     video: "",
     link: "https://github.com/RitoG09/trad-bot-automation",
     technologies: [
@@ -51,7 +51,7 @@ export const projects: Project[] = [
     title: "Portfolio",
     description:
       "My personal developer portfolio showcasing projects, skills, experience, and contact information with a clean, modern UI.",
-    image: "/projects/portfolio.png",
+    image: "/projects/port.png",
     video: "",
     link: "https://github.com/RitoG09/portfolio",
     technologies: [
@@ -73,7 +73,7 @@ export const projects: Project[] = [
     title: "CollabDraw",
     description:
       "A real-time collaborative drawing application supporting multiple users with live canvas synchronization and real time chatting.",
-    image: "/projects/portfolio.png",
+    image: "/projects/collab.png",
     video: "",
     link: "https://collabdraw-peach.vercel.app/",
     technologies: [
@@ -95,7 +95,7 @@ export const projects: Project[] = [
     title: "BrainDock",
     description:
       "A document-based AI chat platform that allows users to upload files and interact with them using intelligent search and Q&A.",
-    image: "/projects/portfolio.png",
+    image: "/projects/braindoc.png",
     video: "",
     link: "https://braindoc-web.vercel.app/",
     technologies: [
@@ -117,7 +117,7 @@ export const projects: Project[] = [
     title: "Planova",
     description:
       "An AI-powered trip planning application that generates personalized itineraries based on budget, duration, and preferences.",
-    image: "/projects/portfolio.png",
+    image: "/projects/planova.png",
     video: "",
     link: "https://planova-web.onrender.com/",
     technologies: [
@@ -138,7 +138,7 @@ export const projects: Project[] = [
     title: "Swasthya",
     description:
       "An AI-powered trip planning application that generates personalized itineraries based on budget, duration, and preferences.",
-    image: "/projects/portfolio.png",
+    image: "/projects/swasthya.png",
     video: "",
     link: "https://ai-tronics-ttit.vercel.app/",
     technologies: [
@@ -154,36 +154,6 @@ export const projects: Project[] = [
     live: "https://ai-tronics-ttit.vercel.app/",
     details: true,
     projectDetailsPageSlug: "/projects/swasthya",
-    isWorking: true,
-  },
-  {
-    title: "Decentralised Voting",
-    description:
-      "An AI-powered trip planning application that generates personalized itineraries based on budget, duration, and preferences.",
-    image: "/projects/portfolio.png",
-    video: "",
-    link: "https://planova-web.onrender.com/",
-    technologies: [
-      { name: "React", icon: <React /> },
-      // { name: "Python", icon: <Python /> },
-      { name: "TypeScript", icon: <TypeScript /> },
-      { name: "Node.js", icon: <NodeJs /> },
-      // { name: "Django", icon: <Django /> },
-      // { name: "Solidity", icon: <Solidity /> },
-      // { name: "Ethers.js", icon: <EthersJs /> },
-      // { name: "Hardhat", icon: <Hardhat /> },
-      // { name: "MetaMask", icon: <MetaMask /> },
-      // { name: "Ethereum", icon: <Ethereum /> },
-      // { name: "Web3", icon: <Web3 /> },
-      // { name: "Machine Learning", icon: <MachineLearning /> },
-      // { name: "Face Authentication", icon: <FaceAuthentication /> },
-      // { name: "OpenCV", icon: <OpenCV /> },
-      { name: "Tailwind CSS", icon: <TailwindCss /> },
-    ],
-    github: "https://github.com/RishitUmeshPadagatti/voting-app-facial",
-    live: "https://planova-web.onrender.com/",
-    details: true,
-    projectDetailsPageSlug: "/projects/decentralised-voting",
     isWorking: true,
   },
 ];

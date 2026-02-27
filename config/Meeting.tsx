@@ -1,6 +1,6 @@
 export const meetingConfig = {
   // Profile image settings
-  profileImage: "/rito.webp",
+  profileImage: "/ritog.jpeg",
   profileAlt: "Profile",
 
   // CTA button settings

@@ -1,5 +1,4 @@
 import { type Project } from "@/types/Projects";
-import React from "react";
 
 import { ProjectCard } from "./ProjectCard";
 

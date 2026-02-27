@@ -11,7 +11,7 @@ import {
   getProjectNavigation,
   getRelatedProjectCaseStudies,
 } from "@/lib/project";
-import { Metadata } from "next";
+// import { Metadata } from "next";
 import { Link } from "next-view-transitions";
 import { notFound } from "next/navigation";
 

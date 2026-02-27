@@ -2,7 +2,7 @@
 
 import { meetingConfig } from "@/config/Meeting";
 import { useHapticFeedback } from "@/hooks/use-haptic-feedback";
-import Cal, { getCalApi } from "@calcom/embed-react";
+import { getCalApi } from "@calcom/embed-react";
 import { useEffect, useState } from "react";
 import Container from "../common/Container";
 import {

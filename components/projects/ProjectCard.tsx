@@ -15,7 +15,7 @@ import {
 import { type Project } from "@/types/Projects";
 import { Link } from "next-view-transitions";
 import Image from "next/image";
-import React, { useState } from "react";
+import { useState } from "react";
 
 import ArrowRight from "../svgs/ArrowRight";
 import Github from "../svgs/Github";

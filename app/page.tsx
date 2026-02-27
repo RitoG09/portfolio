@@ -1,6 +1,6 @@
 "use client";
 
-import BackToTop from "@/components/common/BackToTop";
+// import BackToTop from "@/components/common/BackToTop";
 import Container from "@/components/common/Container";
 import Hero from "@/components/common/Hero";
 import Github from "@/components/landing/Github";

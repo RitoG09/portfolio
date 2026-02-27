@@ -3,8 +3,8 @@ import ContactForm from "@/components/contact/ContactForm";
 // import { Separator } from "@/components/ui/separator";
 import { contactConfig } from "@/config/Contact";
 // import { generateMetadata as getMetadata } from "@/config/Meta";
-import { Metadata } from "next";
-import React from "react";
+// import { Metadata } from "next";
+// import React from "react";
 
 export default function ContactPage() {
   return (

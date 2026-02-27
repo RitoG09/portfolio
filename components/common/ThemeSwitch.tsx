@@ -2,7 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import { useTheme } from "next-themes";
-import React, { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import Moon from "../svgs/Moon";
 import Sun from "../svgs/Sun";
 import { Button } from "../ui/button";
@@ -158,7 +158,7 @@ export const ThemeToggleButton = ({
       size="icon"
       className={cn(
         "size-10 cursor-pointer p-0 transition-all duration-300 active:scale-95",
-        className
+        className,
       )}
       onClick={toggleTheme}
       aria-label="Toggle theme"
@@ -276,7 +276,7 @@ export const createAnimation = (
   variant: AnimationVariant,
   start: AnimationStart = "center",
   blur = false,
-  url?: string
+  url?: string,
 ): Animation => {
   const svg = generateSVG(variant, start);
   const transformOrigin = getTransformOrigin(start);

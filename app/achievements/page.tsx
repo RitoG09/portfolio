@@ -1,6 +1,6 @@
 import AchievementsSection from "@/components/achievements/AchievementsSection";
 import Container from "@/components/common/Container";
-import TextPressure from "@/components/ui/TextPressure";
+// import TextPressure from "@/components/ui/TextPressure";
 
 export default function Achievements() {
   return (

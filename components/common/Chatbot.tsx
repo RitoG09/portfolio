@@ -14,8 +14,8 @@ import {
 } from "@/components/ui/expandable-chat";
 import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { chatSuggestions } from "@/config/ChatbotPrompt";
-import { heroConfig } from "@/config/Hero";
+// import { chatSuggestions } from "@/config/ChatbotPrompt";
+// import { heroConfig } from "@/config/Hero";
 import { useHapticFeedback } from "@/hooks/use-haptic-feedback";
 import { cn } from "@/lib/utils";
 

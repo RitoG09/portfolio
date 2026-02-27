@@ -2,8 +2,6 @@ import { heroConfig, skillComponents, socialLinks } from "@/config/Hero";
 import { parseTemplate } from "@/lib/hero";
 import { cn } from "@/lib/utils";
 import { Link } from "next-view-transitions";
-import Image from "next/image";
-import React, { useState } from "react";
 import Container from "./Container";
 import Skill from "./Skill";
 import CV from "../svgs/CV";
@@ -19,7 +17,7 @@ const buttonIcons = {
 };
 
 export default function Hero() {
-  const { name, title, avatar, description, skills, buttons } = heroConfig;
+  const { name, description, skills, buttons } = heroConfig;
 
   const renderDescription = () => {
     const parts = parseTemplate(description.template, skills);
@@ -31,7 +29,7 @@ export default function Hero() {
         if (!SkillComponent) {
           console.error(
             `Skill component not found: ${part.skill.component}`,
-            skillComponents
+            skillComponents,
           );
           return null;
         }
@@ -104,7 +102,7 @@ export default function Hero() {
                   "h-12 px-8 text-base md:text-lg rounded-lg w-full sm:w-auto",
                   button.variant === "outline" &&
                     "border-2 hover:bg-secondary/10",
-                  button.variant === "default" && "shadow-lg shadow-primary/25"
+                  button.variant === "default" && "shadow-lg shadow-primary/25",
                 )}
               >
                 {IconComponent && <IconComponent className="mr-2" />}

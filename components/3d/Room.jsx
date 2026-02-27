@@ -4,7 +4,6 @@ Command: npx gltfjsx@6.5.3 optimized-room.glb --transform
 Files: optimized-room.glb [825.36KB] > D:\Projects\portfolio\portfolio\public\models\optimized-room-transformed.glb [78.95KB] (90%)
 */
 
-import React from "react";
 import { useGLTF } from "@react-three/drei";
 
 export function Room(props) {

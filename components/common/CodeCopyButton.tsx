@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 
 import Copied from "@/components/svgs/Copied";
 import Copy from "@/components/svgs/Copy";

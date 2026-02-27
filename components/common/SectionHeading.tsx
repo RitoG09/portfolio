@@ -1,5 +1,3 @@
-import React from "../technologies/React";
-
 interface SectionHeadingProps {
   subHeading: string;
   heading: string;

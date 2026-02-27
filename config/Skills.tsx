@@ -1,4 +1,3 @@
-import Bun from "@/components/technologies/Bun";
 import Tailwindcss from "@/components/technologies/Tailwindcss";
 import AWS from "@/components/technologies/AWS";
 import JavaScript from "@/components/technologies/JavaScript";

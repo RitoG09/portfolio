@@ -41,7 +41,7 @@ export const Tabs = ({
       <div
         className={cn(
           "flex flex-row items-center justify-start [perspective:1000px] relative overflow-auto sm:overflow-visible no-visible-scrollbar max-w-full w-full",
-          containerClassName
+          containerClassName,
         )}
       >
         {propTabs.map((tab, idx) => (
@@ -63,7 +63,7 @@ export const Tabs = ({
                 transition={{ type: "spring", bounce: 0.3, duration: 0.6 }}
                 className={cn(
                   "absolute inset-0 bg-gray-200 dark:bg-zinc-800 rounded-full ",
-                  activeTabClassName
+                  activeTabClassName,
                 )}
               />
             )}
@@ -100,15 +100,14 @@ export const FadeInDiv = ({
     return tab.value === tabs[0].value;
   };
   return (
-    <div className="relative w-full min-h-[420px] md:min-h-[520px]">
+    <div className="relative w-full">
       {tabs.map((tab, idx) => (
         <motion.div
           key={tab.value}
           layoutId={tab.value}
           style={{
             scale: 1,
-            top: 0,
-            zIndex: -idx,
+            zIndex: isActive(tab) ? 1 : -idx,
             opacity: idx === 0 ? 1 : 0,
             pointerEvents: idx === 0 ? "auto" : "none",
           }}
@@ -116,10 +115,11 @@ export const FadeInDiv = ({
             y: isActive(tab) ? [0, 40, 0] : 0,
           }}
           className={cn(
-            "w-full absolute top-0 left-0 overflow-y-auto",
-            "max-h-[420px] md:max-h-[520px]",
-            "no-visible-scrollbar",
-            className
+            "w-full",
+            isActive(tab)
+              ? "relative"
+              : "absolute top-0 left-0 h-0 overflow-hidden",
+            className,
           )}
         >
           {tab.content}

@@ -11,12 +11,11 @@ export interface Hackathon {
 
 export interface OSC {
   title: string;
-  description: string;
   organization: string;
   issueLink: string;
   prLink: string;
   time: string;
-  status: "in-progess" | "merged";
+  status: "in-progress" | "merged";
 }
 
 export interface Certification {

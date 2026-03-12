@@ -13,7 +13,8 @@ export const contactConfig = {
       name: "Your name",
       email: "your.email@example.com",
       phone: "+91 1234567890",
-      message: "Through out anything you want to share with me...",
+      message:
+        "Through out anything you want to share with me (min 6 chars max 1000 chars)...",
     },
     submitButton: "Send Message",
     successMessage: "Thanks for your message! I'll get back to you asap.",

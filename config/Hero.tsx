@@ -10,6 +10,7 @@ import PostgreSQL from "@/components/technologies/PostgreSQL";
 import Prisma from "@/components/technologies/Prisma";
 import React from "@/components/technologies/React";
 import TypeScript from "@/components/technologies/Typescript";
+import { Instagram } from "lucide-react";
 
 // Component mapping for skills
 export const skillComponents = {
@@ -102,5 +103,10 @@ export const socialLinks = [
     name: "Email",
     href: "mailto:ritabrataghosh09@gmail.com",
     icon: <Mail />,
+  },
+  {
+    name: "Instagram",
+    href: "https://www.instagram.com/ritog_09/?hl=en",
+    icon: <Instagram />,
   },
 ];

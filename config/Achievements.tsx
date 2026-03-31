@@ -9,7 +9,7 @@ export const hackathons: Hackathon[] = [
     prize: "50000",
     relatedPost:
       "https://www.linkedin.com/posts/ritog09_hackathon-innovation-healthcare-activity-7394777214476750848-xI-K?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEOqC18B0Ra01Zo8HryK10CKGm6VFJf4Y9A",
-    relatedBlogSlug: "/blogs/sjbit-hackathon",
+    relatedBlogSlug: "/blogs",
     time: "",
   },
   {
@@ -20,7 +20,7 @@ export const hackathons: Hackathon[] = [
     prize: "20000",
     relatedPost:
       "https://www.linkedin.com/posts/ritog09_this-is-the-3rd-hackathon-win-in-november-activity-7402425867500716032-DSUJ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEOqC18B0Ra01Zo8HryK10CKGm6VFJf4Y9A",
-    relatedBlogSlug: "/blogs/ttit-hackathon",
+    relatedBlogSlug: "/blogs",
     time: "",
   },
   {
@@ -31,7 +31,18 @@ export const hackathons: Hackathon[] = [
     prize: "15000",
     relatedPost:
       "https://www.linkedin.com/posts/ritog09_this-is-the-3rd-hackathon-win-in-november-activity-7402425867500716032-DSUJ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEOqC18B0Ra01Zo8HryK10CKGm6VFJf4Y9A",
-    relatedBlogSlug: "/blogs/global-ideathon",
+    relatedBlogSlug: "/blogs",
+    time: "",
+  },
+  {
+    title: "GDG Ideathon",
+    image: "/hackathons/h4.jpg",
+    description: "",
+    position: 3,
+    prize: "goodies",
+    relatedPost:
+      "https://www.linkedin.com/posts/ritog09_this-is-the-3rd-hackathon-win-in-november-activity-7402425867500716032-DSUJ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEOqC18B0Ra01Zo8HryK10CKGm6VFJf4Y9A",
+    relatedBlogSlug: "/blogs",
     time: "",
   },
 ];
@@ -57,7 +68,6 @@ export const osc: OSC[] = [
   },
   {
     title:
-    
       "How do we present errors when the error is that the schema(s) passed?",
     organization: "hyperjump-io",
     issueLink: "https://github.com/hyperjump-io/json-schema-errors/issues/120",

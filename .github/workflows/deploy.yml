@@ -33,5 +33,18 @@ jobs:
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
             cd ~/portfolio-deploy
-            docker compose pull
-            docker compose up -d
+
+            echo "Stopping old container..."
+            docker compose down
+
+            echo "Removing old image..."
+            docker rmi ritog09/portfolio:latest || true
+
+            echo "Pulling new image..."
+            docker pull ritog09/portfolio:latest
+
+            echo "Starting new container..."
+            docker compose up -d --force-recreate
+
+            echo "Cleaning unused images..."
+            docker system prune -f

@@ -8,6 +8,7 @@ import Navbar from "@/components/common/Navbar";
 import Footer from "@/components/common/Footer";
 import { Toaster } from "react-hot-toast";
 import Chatbot from "@/components/common/Chatbot";
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -38,6 +39,22 @@ export default function RootLayout({
     <ViewTransitions>
       <html lang="en" suppressHydrationWarning>
         <body className={`${hankenGrotesk.className} antialiased`}>
+          <head>
+            {/* Google Analytics */}
+            <Script
+              src="https://www.googletagmanager.com/gtag/js?id=G-58VXRKXBN9"
+              strategy="afterInteractive"
+            />
+            <Script id="ga-init" strategy="afterInteractive">
+              {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          window.gtag = gtag;
+          gtag('js', new Date());
+          gtag('config', 'G-58VXRKXBN9');
+        `}
+            </Script>
+          </head>
           <ThemeProvider
             attribute="class"
             defaultTheme="system"

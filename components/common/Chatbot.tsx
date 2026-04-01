@@ -226,8 +226,8 @@ const Chatbot: React.FC = () => {
                 className={cn(
                   "flex w-max max-w-xs flex-col gap-2 rounded-lg px-3 py-2 text-sm",
                   message.sender === "user"
-                    ? "text-secondary bg-muted ml-auto"
-                    : "bg-muted"
+                    ? "bg-primary text-primary-foreground ml-auto"
+                    : "bg-muted text-foreground"
                 )}
               >
                 <div className="flex items-start space-x-2">
@@ -284,7 +284,7 @@ const Chatbot: React.FC = () => {
                       className={cn(
                         "mt-1 text-xs",
                         message.sender === "user"
-                          ? "text-secondary"
+                          ? "text-primary-foreground/70"
                           : "text-muted-foreground"
                       )}
                     >

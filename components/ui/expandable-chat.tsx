@@ -62,7 +62,7 @@ const ExpandableChat: React.FC<ExpandableChatProps> = ({
       <div
         ref={chatRef}
         className={cn(
-          "bg-background fixed inset-0 flex h-full w-full flex-col overflow-hidden border shadow-md transition-all duration-250 ease-out sm:absolute sm:inset-auto sm:h-[80vh] sm:w-[90vw] sm:rounded-lg",
+          "bg-background fixed inset-0 flex h-full w-full flex-col overflow-hidden border-2 border-slate-300 dark:border dark:border-border shadow-md transition-all duration-250 ease-out sm:absolute sm:inset-auto sm:h-[80vh] sm:w-[90vw] sm:rounded-lg",
           chatConfig.chatPositions[position],
           chatConfig.dimensions[size],
           isOpen ? chatConfig.states.open : chatConfig.states.closed,
@@ -105,14 +105,14 @@ ExpandableChatHeader.displayName = "ExpandableChatHeader";
 const ExpandableChatBody: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
   className,
   ...props
-}) => <div className={cn("flex-grow overflow-y-auto", className)} {...props} />;
+}) => <div className={cn("grow overflow-y-auto", className)} {...props} />;
 
 ExpandableChatBody.displayName = "ExpandableChatBody";
 
 const ExpandableChatFooter: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
   className,
   ...props
-}) => <div className={cn("border-t p-4", className)} {...props} />;
+}) => <div className={cn("border-t-2 dark:border-t border-slate-300 dark:border-border p-4", className)} {...props} />;
 
 ExpandableChatFooter.displayName = "ExpandableChatFooter";
 
@@ -146,6 +146,7 @@ const ExpandableChatToggle: React.FC<ExpandableChatToggleProps> = ({
       onClick={handleToggle}
       className={cn(
         "flex h-14 w-14 items-center justify-center rounded-full shadow-md transition-all duration-300 hover:shadow-lg hover:shadow-black/30",
+        "bg-white text-black hover:bg-gray-100 dark:bg-primary dark:text-primary-foreground dark:hover:bg-primary/90",
         className
       )}
       {...props}

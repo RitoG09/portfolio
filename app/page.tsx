@@ -1,22 +1,33 @@
 "use client";
 
-// import BackToTop from "@/components/common/BackToTop";
 import Container from "@/components/common/Container";
 import Hero from "@/components/common/Hero";
 import Github from "@/components/landing/Github";
 import Skills from "@/components/landing/Skills";
 import Meeting from "@/components/landing/Meeting";
 import Projects from "@/components/landing/Projects";
+import DiagonalPattern from "@/components/common/DiagonalPattern";
+import Dividor from "@/components/common/Dividor";
 
 export default function Page() {
   return (
-    <Container className="min-h-screen">
-      <Hero />
-      <Skills />
-      <Projects />  
-      <Github />
-      <Meeting />
-      {/* <BackToTop /> */}
-    </Container>
+    <div className="min-h-screen relative w-full flex flex-col items-center overflow-x-hidden">
+      <div className="w-full max-w-3xl relative">
+        <DiagonalPattern side="left" className="-left-[20px] md:-left-[60px]" />
+        <DiagonalPattern
+          side="right"
+          className="-right-[20px] md:-right-[60px]"
+        />
+
+        <Hero />
+        <Dividor />
+        <Skills />
+        <Dividor />
+        <Projects />
+        <Dividor className="mt-3" />
+        <Github />
+        <Meeting />
+      </div>
+    </div>
   );
 }

@@ -82,7 +82,7 @@
 :root {
   --radius: 0.625rem;
   --blog-font-size: 16px;
-  --background: oklch(1 0 0);
+  --background: oklch(92.281% 0.04228 101.352); /* white background for light mode */
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
@@ -115,8 +115,9 @@
   --sidebar-ring: oklch(0.708 0 0);
 }
 
+/* zinc-900 for dark mode as well */
 .dark {
-  --background: oklch(0.145 0 0);
+  --background: #18181b;
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.205 0 0);
   --card-foreground: oklch(0.985 0 0);

@@ -50,7 +50,7 @@ const Chatbot: React.FC = () => {
   useEffect(() => {
     if (scrollAreaRef.current) {
       const scrollElement = scrollAreaRef.current.querySelector(
-        "[data-radix-scroll-area-viewport]"
+        "[data-radix-scroll-area-viewport]",
       );
       if (scrollElement) {
         scrollElement.scrollTop = scrollElement.scrollHeight;
@@ -103,9 +103,9 @@ const Chatbot: React.FC = () => {
 
   const sendMsg = async (msgText: string, botMsgId: number) => {
     try {
-      // Prepare conversation history for Gemini API format
+      // Prepare conversation history
       const history = messages.slice(-10).map((msg) => ({
-        role: msg.sender === "user" ? ("user" as const) : ("model" as const),
+        role: msg.sender === "user" ? "user" : "assistant",
         parts: [{ text: msg.text }],
       }));
 
@@ -152,8 +152,8 @@ const Chatbot: React.FC = () => {
                   prev.map((msg) =>
                     msg.id === botMsgId
                       ? { ...msg, text: accumulatedText, isStreaming: true }
-                      : msg
-                  )
+                      : msg,
+                  ),
                 );
               }
               if (data.done) {
@@ -162,8 +162,8 @@ const Chatbot: React.FC = () => {
                   prev.map((msg) =>
                     msg.id === botMsgId
                       ? { ...msg, text: accumulatedText, isStreaming: false }
-                      : msg
-                  )
+                      : msg,
+                  ),
                 );
                 break;
               }
@@ -183,8 +183,8 @@ const Chatbot: React.FC = () => {
                 text: "I'm sorry, I'm having trouble responding right now. Please try again later.",
                 isStreaming: false,
               }
-            : msg
-        )
+            : msg,
+        ),
       );
     } finally {
       setIsLoading(false);
@@ -227,7 +227,7 @@ const Chatbot: React.FC = () => {
                   "flex w-max max-w-xs flex-col gap-2 rounded-lg px-3 py-2 text-sm",
                   message.sender === "user"
                     ? "bg-primary text-primary-foreground ml-auto"
-                    : "bg-muted text-foreground"
+                    : "bg-muted text-foreground",
                 )}
               >
                 <div className="flex items-start space-x-2">
@@ -285,7 +285,7 @@ const Chatbot: React.FC = () => {
                         "mt-1 text-xs",
                         message.sender === "user"
                           ? "text-primary-foreground/70"
-                          : "text-muted-foreground"
+                          : "text-muted-foreground",
                       )}
                     >
                       {message.timestamp}

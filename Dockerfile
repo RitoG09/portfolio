@@ -15,6 +15,9 @@ WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
+ENV GROQ_API_KEY=dummy
+ENV CAL_API_KEY=dummy
+
 RUN npm run build
 
 # Production 

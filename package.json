@@ -26,7 +26,6 @@
     "@react-three/rapier": "^2.2.0",
     "@shikijs/rehype": "^3.20.0",
     "@types/three": "^0.182.0",
-    "chrono-node": "^2.9.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "eventsource-parser": "^3.0.6",

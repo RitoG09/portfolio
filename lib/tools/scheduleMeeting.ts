@@ -1,6 +1,5 @@
 import { tool } from "langchain";
 import * as z from "zod";
-import * as chrono from "chrono-node";
 
 export const scheduleMeetingTool = tool(
   async ({ name, email, datetime }) => {

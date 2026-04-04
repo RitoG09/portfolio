@@ -30,7 +30,7 @@ interface Message {
 const initialMessage: Message[] = [
   {
     id: 1,
-    text: "Hi I'm Jarvis, Rito's Digital Version. How can I help you.",
+    text: "Hello, I’m Jarvis - representing Rito.\n\nI can help you explore his projects, experience, or assist in scheduling a meeting.\n\n To book a call, provide a date & time in this format:\n2026-04-10 09:00",
     sender: "bot",
     timestamp: new Date().toLocaleTimeString([], {
       hour: "2-digit",

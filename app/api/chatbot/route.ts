@@ -191,19 +191,19 @@ export async function POST(req: NextRequest) {
         content: validatedData.msg,
       },
     ];
-    const response = await agent.invoke({
+    const result = await agent.invoke({
       messages,
     });
-    const lastMessage = response.messages?.[response.messages.length - 1];
+    const lastMessage = result.messages[result.messages.length - 1];
 
     let text = "";
 
-    if (typeof lastMessage?.content === "string") {
+    if (typeof lastMessage.content === "string") {
       text = lastMessage.content;
-    } else if (Array.isArray(lastMessage?.content)) {
+    } else if (Array.isArray(lastMessage.content)) {
       text = lastMessage.content.map((c: any) => c.text || "").join("");
     } else {
-      text = "Sorry, I couldn't process that.";
+      text = "Something went wrong.";
     }
     const encoder = new TextEncoder();
 

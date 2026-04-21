@@ -56,10 +56,10 @@ export const projects: Project[] = [
       { name: "Vercel", icon: <Vercel /> },
     ],
     github: "https://github.com/RitoG09/portfolio",
-    live: "",
+    live: "https://ritog.dev",
     details: true,
     projectDetailsPageSlug: "/projects/portfolio",
-    isWorking: false,
+    isWorking: true,
   },
 
   {

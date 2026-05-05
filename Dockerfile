@@ -1,4 +1,4 @@
-# Dependencies
+# Dependencies (currently it's not deployed in ec2...)
 FROM node:20-alpine AS deps
 
 WORKDIR /app

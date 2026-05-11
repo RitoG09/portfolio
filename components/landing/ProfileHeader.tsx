@@ -24,7 +24,7 @@ export default function ProfileHeader() {
     <div className="w-full flex flex-col items-center mt-8 mb-8 z-10 relative">
       <div className="w-full h-[250px] md:h-[300px] relative overflow-hidden">
         <Image
-          src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=2070&auto=format&fit=crop"
+          src="https://images.unsplash.com/photo-1756758006047-efc2f2b7d493?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
           alt="Mountains"
           fill
           className="object-cover"
@@ -32,7 +32,7 @@ export default function ProfileHeader() {
         <div className="absolute inset-0 bg-black/20 flex flex-col items-center justify-center">
           <div className="flex flex-col items-center text-white mt-12 px-4 text-center">
             <span className="text-xl md:text-2xl font-serif italic mb-2 tracking-wide text-white drop-shadow-md">
-              Luck is just what persistence looks like from the outside.
+              The best way to predict the future is to invent it.
             </span>
           </div>
         </div>

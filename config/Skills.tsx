@@ -8,6 +8,10 @@ import PostgreSQL from "@/components/technologies/PostgreSQL";
 import Prisma from "@/components/technologies/Prisma";
 import ReactIcon from "@/components/technologies/React";
 import TypeScript from "@/components/technologies/Typescript";
+import TRPC from "@/components/technologies/TRPC";
+import WebSocket from "@/components/technologies/WebSocket";
+import Motion from "@/components/technologies/Motion";
+import Bun from "@/components/technologies/Bun";
 
 export interface Skill {
   name: string;
@@ -19,6 +23,8 @@ export const mySkills: Skill[] = [
   { name: "React", icon: <ReactIcon />, color: "#61DAFB" },
   { name: "AWS", icon: <AWS />, color: "#FF9900" },
   { name: "Tailwind CSS", icon: <Tailwindcss />, color: "#06B6D4" },
+  { name: "Motion", icon: <Motion />, color: "#9147FF" },
+  { name: "Bun", icon: <Bun />, color: "#9147FF" },
   { name: "JavaScript", icon: <JavaScript />, color: "#F7DF1E" },
   { name: "TypeScript", icon: <TypeScript />, color: "#3178C6" },
   { name: "MongoDB", icon: <MongoDB />, color: "#47A248" },
@@ -26,4 +32,6 @@ export const mySkills: Skill[] = [
   { name: "Node.js", icon: <NodeJs />, color: "#5FA04E" },
   { name: "PostgreSQL", icon: <PostgreSQL />, color: "#4169E1" },
   { name: "Prisma", icon: <Prisma />, color: "#5A67D8" },
+  { name: "tRPC", icon: <TRPC />, color: "#5A67D8" },
+  { name: "Websocket", icon: <WebSocket />, color: "#5A67D8" },
 ];

@@ -19,7 +19,7 @@ export default function Page() {
           side="right"
           className="-right-[20px] md:-right-[60px]"
         />
-        <Hero />
+        {/* <Hero /> */}
         <ProfileHeader />
         <Dividor />
         <Skills />

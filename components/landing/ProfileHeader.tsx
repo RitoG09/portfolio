@@ -49,34 +49,8 @@ export default function ProfileHeader() {
           />
         </div>
 
-        <div className="absolute top-4 right-6 md:right-10 flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 font-medium">
-          {/* Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 w-full justify-center md:justify-start">
-            {buttons.map((button, ind) => {
-              const IconComponent =
-                buttonIcons[button.icon as keyof typeof buttonIcons];
-              return (
-                <Button
-                  key={ind}
-                  variant={button.variant as "outline" | "default"}
-                  className={cn(
-                    "h-12 px-8 text-base md:text-lg rounded-lg w-full sm:w-auto",
-                    button.variant === "outline" &&
-                      "border-2 hover:bg-secondary/10",
-                    button.variant === "default" &&
-                      "shadow-lg shadow-primary/25",
-                  )}
-                >
-                  {IconComponent && <IconComponent className="mr-2" />}
-                  <Link href={button.href}>{button.text}</Link>
-                </Button>
-              );
-            })}
-          </div>
-        </div>
-
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end w-full">
-          <div className="mt-4">
+          <div className="mt-10 md:mt-4">
             <h1 className="text-3xl md:text-4xl font-serif italic text-white mb-1">
               Rito
             </h1>
@@ -105,7 +79,7 @@ export default function ProfileHeader() {
           </div>
 
           {/* Social Links */}
-          <div className="flex gap-6 justify-center md:justify-start">
+          <div className="flex gap-6 justify-center md:justify-start mt-6 md:mt-0">
             {socialLinks.map((link) => (
               <Tooltip key={link.name} delayDuration={0}>
                 <TooltipTrigger asChild>
@@ -124,6 +98,32 @@ export default function ProfileHeader() {
                 </TooltipContent>
               </Tooltip>
             ))}
+          </div>
+        </div>
+
+        <div className="mt-8 md:mt-0 md:absolute md:top-6 md:right-10 flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 font-medium w-full md:w-auto z-10">
+          {/* Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 w-full justify-center md:justify-start">
+            {buttons.map((button, ind) => {
+              const IconComponent =
+                buttonIcons[button.icon as keyof typeof buttonIcons];
+              return (
+                <Button
+                  key={ind}
+                  variant={button.variant as "outline" | "default"}
+                  className={cn(
+                    "h-12 px-8 text-base md:text-lg rounded-lg w-full sm:w-auto",
+                    button.variant === "outline" &&
+                      "border-2 hover:bg-secondary/10",
+                    button.variant === "default" &&
+                      "shadow-lg shadow-primary/25",
+                  )}
+                >
+                  {IconComponent && <IconComponent className="mr-2" />}
+                  <Link href={button.href}>{button.text}</Link>
+                </Button>
+              );
+            })}
           </div>
         </div>
       </div>

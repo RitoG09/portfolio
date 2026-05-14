@@ -38,9 +38,9 @@ export default function ProfileHeader() {
         </div>
       </div>
 
-      <div className="w-full bg-[#1c1c1c] dark:bg-[#1a1a1a] border border-black/10 dark:border-white/5 relative px-6 md:px-10 pb-6 pt-16">
+      <div className="w-full bg-background dark:bg-[#1a1a1a] border border-black/10 dark:border-white/5 relative px-6 md:px-10 pb-6 pt-16">
         {/* Avatar */}
-        <div className="absolute -top-16 left-6 md:left-10 rounded-full border-[6px] border-[#1c1c1c] dark:border-[#1a1a1a] overflow-hidden size-[140px] bg-[#222]">
+        <div className="absolute -top-16 left-6 md:left-10 rounded-full border-[6px] border-background dark:border-[#1a1a1a] overflow-hidden size-[140px] bg-gray-100 dark:bg-[#222]">
           <Image
             src="/rito.webp"
             alt="Profile Avatar"
@@ -51,7 +51,7 @@ export default function ProfileHeader() {
 
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end w-full">
           <div className="mt-10 md:mt-4">
-            <h1 className="text-3xl md:text-4xl font-serif italic text-white mb-1">
+            <h1 className="text-3xl md:text-4xl font-serif italic text-black dark:text-white mb-1">
               Rito
             </h1>
             {/* <p className="text-sm md:text-base text-gray-400 font-medium tracking-wide">

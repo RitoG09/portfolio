@@ -1,4 +1,3 @@
-import Dock from "../ui/Dock";
 import { navbarConfig } from "@/config/Navbar";
 import Container from "./Container";
 import { ThemeToggleButton } from "./ThemeSwitch";
@@ -22,14 +21,16 @@ export default function Navbar() {
             />
           </Link>
         </div>
-        <div className="flex flex-1 justify-center">
-          <Dock
-            items={items}
-            panelHeight={68}
-            baseItemSize={50}
-            magnification={70}
-            floating={false}
-          />
+        <div className="flex flex-1 justify-center items-center gap-1 sm:gap-2 rounded-full border border-black/10 dark:border-white/10 bg-background/50 dark:bg-black/20 px-2 sm:px-4 py-2 shadow-sm backdrop-blur-md">
+          {items.map((item, index) => (
+            <Link
+              key={index}
+              href={item.href}
+              className="px-3 sm:px-4 py-1.5 text-xs sm:text-sm font-medium text-muted-foreground transition-all duration-300 hover:text-foreground hover:bg-black/5 dark:hover:bg-white/10 rounded-full"
+            >
+              {item.label}
+            </Link>
+          ))}
         </div>
         <div className="flex flex-1 justify-end gap-4">
           <ThemeToggleButton variant="circle" start="top-right" blur />

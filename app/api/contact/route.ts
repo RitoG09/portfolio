@@ -11,7 +11,7 @@ const contactSchema = z.object({
 async function sendToDiscord(data: z.infer<typeof contactSchema>) {
   const webhookUrl = process.env.DISCORD_WEBHOOK_URL;
   if (!webhookUrl) {
-    console.error("DISCORD_WEBHOOK_URL not configured");
+    console.error("DISCORD WEBHOOK URL is not configured");
     return false;
   }
   const payload = {
@@ -56,6 +56,8 @@ async function sendToDiscord(data: z.infer<typeof contactSchema>) {
     return false;
   }
 }
+
+// adding rate limiting (redis)
 
 export async function POST(req: NextRequest) {
   try {

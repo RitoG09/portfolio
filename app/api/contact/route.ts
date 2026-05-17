@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import * as z from "zod";
+import { getClientIp } from "@/lib/get-ip";
+import { rateLimit } from "@/lib/rate-limit";
 
 const contactSchema = z.object({
   name: z.string().min(2).max(100),
@@ -57,20 +59,46 @@ async function sendToDiscord(data: z.infer<typeof contactSchema>) {
   }
 }
 
-// adding rate limiting (redis)
-
 export async function POST(req: NextRequest) {
   try {
+    const ip = getClientIp(req);
+    const { success, remaining, reset } = await rateLimit(ip);
+
+    if (!success) {
+      return NextResponse.json(
+        {
+          error: "Too many requests. Please try again later.",
+        },
+        {
+          status: 429,
+          headers: {
+            "X-RateLimit-Remaining": remaining.toString(),
+            "X-RateLimit-Reset": reset.toString(),
+          },
+        },
+      );
+    }
+
     const body = await req.json();
     const validatedData = contactSchema.parse(body);
     const discordMessage = await sendToDiscord(validatedData);
     if (!discordMessage) {
       return NextResponse.json(
         { error: "Failed to send notification" },
-        { status: 500 }
+        { status: 500 },
       );
     }
-    return NextResponse.json({ message: "Notification sent successfully" });
+    return NextResponse.json(
+      {
+        message: "Notification sent successfully",
+      },
+      {
+        headers: {
+          "X-RateLimit-Remaining": remaining.toString(),
+          "X-RateLimit-Reset": reset.toString(),
+        },
+      },
+    );
   } catch (error) {
     console.error("API Error:", error);
 
@@ -80,13 +108,13 @@ export async function POST(req: NextRequest) {
           error: "Invalid form data",
           //   details: error.errors,
         },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
     return NextResponse.json(
       { error: "Internal server error" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

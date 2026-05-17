@@ -50,6 +50,7 @@ const formSchema = z.object({
     .max(1000, {
       message: "Message must not exceed 1000 characters.",
     }),
+  website: z.string().optional(),
 });
 
 type formValues = z.infer<typeof formSchema>;
@@ -63,6 +64,7 @@ export default function ContactForm() {
       phone: "",
       email: "",
       message: "",
+      website: "", // honeypot
     },
   });
   const onSubmit = async (val: formValues) => {
@@ -81,7 +83,7 @@ export default function ContactForm() {
         form.reset();
       } else {
         toast.error(
-          result.error || "Failed to send message. Please try again."
+          result.error || "Failed to send message. Please try again.",
         );
       }
     } catch (error) {
@@ -172,6 +174,21 @@ export default function ContactForm() {
                 </FormItem>
               )}
             />
+
+            <div className="absolute left-[-9999px] opacity-0 pointer-events-none">
+              <FormField
+                control={form.control}
+                name="website"
+                render={({ field }) => (
+                  <input
+                    type="text"
+                    {...field}
+                    autoComplete="off"
+                    tabIndex={-1}
+                  />
+                )}
+              />
+            </div>
 
             <Button type="submit" className="w-fit" disabled={isSubmitting}>
               {isSubmitting ? (

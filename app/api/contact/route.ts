@@ -80,6 +80,12 @@ export async function POST(req: NextRequest) {
     }
 
     const body = await req.json();
+
+    // honeypot check
+    if (body.website) {
+      return NextResponse.json({ error: "Spam detected" }, { status: 400 });
+    }
+
     const validatedData = contactSchema.parse(body);
     const discordMessage = await sendToDiscord(validatedData);
     if (!discordMessage) {

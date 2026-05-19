@@ -1,7 +1,7 @@
 import { redis } from "./redis";
 
-const WINDOW_SIZE = 60 * 10;
-const MAX_REQUESTS = 7;
+const WINDOW_SIZE = 60 * 60;
+const MAX_REQUESTS = 3;
 
 export async function rateLimit(ip: string) {
   const key = `ratelimit:contact:${ip}`;

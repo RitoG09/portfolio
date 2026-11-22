@@ -86,9 +86,10 @@ export default function ProfileHeader() {
                   <Link
                     href={link.href}
                     key={link.name}
-                    className="text-muted-foreground hover:text-primary transition-all transform hover:scale-110 hover:-translate-y-1"
+                    aria-label={`Visit ${link.name}`}
+                    className={`social-link social-link-${link.name.toLowerCase()}`}
                   >
-                    <span className="size-5 md:size-5 flex items-center justify-center [&_svg]:size-full">
+                    <span className="social-link__icon size-5 md:size-5 flex items-center justify-center [&_svg]:size-full">
                       {link.icon}
                     </span>
                   </Link>

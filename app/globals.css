@@ -82,7 +82,7 @@
 :root {
   --radius: 0.625rem;
   --blog-font-size: 16px;
-  --background: oklch(92.281% 0.04228 101.352); /* white background for light mode */
+  --background: oklch(0.975 0.006 255); /* soft cool white for light mode */
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
@@ -161,6 +161,105 @@
 
 .text-secondary {
   @apply text-[#909092] dark:text-[#909092];
+}
+
+/* Brand treatments for the primary social links in the profile header. */
+.social-link {
+  --social-color: #64748b;
+  position: relative;
+  isolation: isolate;
+  display: inline-flex;
+  width: 1.25rem;
+  height: 1.25rem;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 9999px;
+  color: var(--social-color);
+  transition:
+    color 220ms ease,
+    background-color 220ms ease,
+    border-color 220ms ease;
+}
+
+.social-link::before {
+  position: absolute;
+  z-index: -1;
+  inset: -0.3rem;
+  border: 1.5px solid currentColor;
+  border-top-color: transparent;
+  border-radius: inherit;
+  content: "";
+  opacity: 0;
+  pointer-events: none;
+  transform: rotate(-45deg) scale(0.7);
+  transition:
+    opacity 220ms ease,
+    transform 220ms ease;
+}
+
+.social-link:hover,
+.social-link:focus-visible {
+  color: white;
+  border-color: transparent;
+  background: var(--social-color);
+}
+
+.social-link:hover::before,
+.social-link:focus-visible::before {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+  animation: social-link-orbit 900ms linear infinite;
+}
+
+.social-link__icon {
+  transition: transform 220ms ease;
+}
+
+.social-link:hover .social-link__icon,
+.social-link:focus-visible .social-link__icon {
+  transform: none;
+}
+
+.social-link-linkedin {
+  --social-color: #0a66c2;
+}
+
+.social-link-github {
+  --social-color: #24292f;
+}
+
+.social-link-instagram {
+  --social-color: #e1306c;
+}
+
+.social-link-instagram:hover,
+.social-link-instagram:focus-visible {
+  background: radial-gradient(
+    circle at 30% 110%,
+    #fdf497 0 8%,
+    #fdf49700 35%
+  ), linear-gradient(135deg, #405de6 0%, #833ab4 38%, #e1306c 70%, #fd1d1d 100%);
+  border-color: #e1306c;
+}
+
+@keyframes social-link-orbit {
+  to {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .social-link,
+  .social-link::before,
+  .social-link__icon {
+    transition: none;
+  }
+
+  .social-link:hover::before,
+  .social-link:focus-visible::before {
+    animation: none;
+  }
 }
 
 .font-hanken-grotesk {

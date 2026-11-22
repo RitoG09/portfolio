@@ -13,7 +13,6 @@ import {
   ExpandableChatHeader,
 } from "@/components/ui/expandable-chat";
 import { Input } from "@/components/ui/input";
-import { ScrollArea } from "@/components/ui/scroll-area";
 // import { chatSuggestions } from "@/config/ChatbotPrompt";
 // import { heroConfig } from "@/config/Hero";
 import { useHapticFeedback } from "@/hooks/use-haptic-feedback";
@@ -49,12 +48,7 @@ const Chatbot: React.FC = () => {
   // Auto-scroll to bottom when new messages are added
   useEffect(() => {
     if (scrollAreaRef.current) {
-      const scrollElement = scrollAreaRef.current.querySelector(
-        "[data-radix-scroll-area-viewport]",
-      );
-      if (scrollElement) {
-        scrollElement.scrollTop = scrollElement.scrollHeight;
-      }
+      scrollAreaRef.current.scrollTop = scrollAreaRef.current.scrollHeight;
     }
   }, [messages]);
 
@@ -218,7 +212,10 @@ const Chatbot: React.FC = () => {
       </ExpandableChatHeader>
 
       <ExpandableChatBody>
-        <ScrollArea ref={scrollAreaRef} className="h-full p-4">
+        <div
+          ref={scrollAreaRef}
+          className="h-full min-h-0 overflow-y-auto overscroll-contain touch-pan-y p-4"
+        >
           <div className="space-y-4">
             {messages.map((message) => (
               <div
@@ -317,7 +314,7 @@ const Chatbot: React.FC = () => {
               </div>
             )} */}
           </div>
-        </ScrollArea>
+        </div>
       </ExpandableChatBody>
 
       <ExpandableChatFooter>

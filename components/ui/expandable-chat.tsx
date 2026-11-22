@@ -107,7 +107,7 @@ const ExpandableChatBody: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
   ...props
 }) => (
   <div
-    className={cn("min-h-0 grow overflow-hidden", className)}
+    className={cn("flex min-h-0 grow flex-col overflow-hidden", className)}
     {...props}
   />
 );

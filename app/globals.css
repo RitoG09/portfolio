@@ -82,7 +82,7 @@
 :root {
   --radius: 0.625rem;
   --blog-font-size: 16px;
-  --background: oklch(92.281% 0.04228 101.352); /* white background for light mode */
+  --background: oklch(0.975 0.006 255); /* soft cool white for light mode */
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);

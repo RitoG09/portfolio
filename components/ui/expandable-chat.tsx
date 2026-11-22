@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { useHapticFeedback } from "@/hooks/use-haptic-feedback";
 import { cn } from "@/lib/utils";
 import { MessageCircle, X } from "lucide-react";
-import React, { useEffect, useState } from "react";
+import React, { useRef, useState } from "react";
 
 export type ChatPosition = "bottom-right" | "bottom-left";
 export type ChatSize = "sm" | "md" | "lg" | "xl" | "full";
@@ -47,34 +47,26 @@ const ExpandableChat: React.FC<ExpandableChatProps> = ({
   ...props
 }) => {
   const [isOpen, setIsOpen] = useState(false);
-
-  useEffect(() => {
-    if (!isOpen) return;
-
-    const previousOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-
-    return () => {
-      document.body.style.overflow = previousOverflow;
-    };
-  }, [isOpen]);
+  const chatRef = useRef<HTMLDivElement>(null);
 
   const toggleChat = () => setIsOpen(!isOpen);
 
   return (
     <div
       className={cn(
-        `fixed ${chatConfig.positions[position]} z-50`,
+        `fixed ${chatConfig.positions[position]} z-50 hover:cursor-pointer`,
         className
       )}
       {...props}
     >
       <div
+        ref={chatRef}
         className={cn(
-          "chatbot-panel fixed inset-0 flex h-[100dvh] w-full min-h-0 flex-col overflow-hidden rounded-none border shadow-2xl transition-all duration-250 ease-out sm:absolute sm:inset-auto sm:bottom-[calc(100%+1rem)] sm:right-0 sm:h-[min(700px,calc(100dvh-2rem))] sm:w-[min(28rem,calc(100vw-2rem))] sm:rounded-3xl",
+          "bg-background fixed inset-0 flex h-full w-full flex-col overflow-hidden border-2 border-slate-300 dark:border dark:border-border shadow-md transition-all duration-250 ease-out sm:absolute sm:inset-auto sm:h-[80vh] sm:w-[90vw] sm:rounded-lg",
           chatConfig.chatPositions[position],
           chatConfig.dimensions[size],
-          isOpen ? chatConfig.states.open : chatConfig.states.closed
+          isOpen ? chatConfig.states.open : chatConfig.states.closed,
+          className
         )}
       >
         {children}
@@ -103,7 +95,7 @@ const ExpandableChatHeader: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
   ...props
 }) => (
   <div
-    className={cn("chatbot-header flex shrink-0 items-center justify-between border-b px-5 py-4", className)}
+    className={cn("flex items-center justify-between border-b p-4", className)}
     {...props}
   />
 );
@@ -125,7 +117,7 @@ ExpandableChatBody.displayName = "ExpandableChatBody";
 const ExpandableChatFooter: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
   className,
   ...props
-}) => <div className={cn("chatbot-footer shrink-0 border-t p-4", className)} {...props} />;
+}) => <div className={cn("border-t-2 dark:border-t border-slate-300 dark:border-border p-4", className)} {...props} />;
 
 ExpandableChatFooter.displayName = "ExpandableChatFooter";
 

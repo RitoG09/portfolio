@@ -65,4 +65,3 @@ export const githubConfig = {
     description: "Fetching your GitHub activity data",
   },
 };
-

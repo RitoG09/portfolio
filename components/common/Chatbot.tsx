@@ -188,19 +188,19 @@ const Chatbot: React.FC = () => {
 
   return (
     <ExpandableChat
-      className="mt-4 ml-4 max-h-[95vh] max-w-[calc(100vw-2rem)] hover:cursor-pointer sm:max-w-[calc(100vw-4rem)] md:max-w-xl "
+      className="chatbot-shell"
       position="bottom-right"
       size="lg"
       icon={<ChatBubbleIcon className="h-6 w-6" />}
     >
-      <ExpandableChatHeader>
+      <ExpandableChatHeader className="chatbot-header-content">
         <div className="flex items-center space-x-3">
           <Avatar className="border-primary h-8 w-8 border-2 bg-blue-300 dark:bg-yellow-300">
             <AvatarImage src="/jarvis2.jpg" alt="Assistant" />
             <AvatarFallback>jarvis-AI</AvatarFallback>
           </Avatar>
-          <div>
-            <h3 className="text-sm font-semibold">Jarvis</h3>
+          <div className="min-w-0">
+            <h3 className="text-sm font-semibold tracking-tight">Jarvis</h3>
             <div className="text-muted-foreground text-xs">
               <div className="flex items-center gap-1">
                 <div className="h-2 w-2 animate-pulse rounded-full bg-green-500"></div>
@@ -214,17 +214,17 @@ const Chatbot: React.FC = () => {
       <ExpandableChatBody>
         <div
           ref={scrollAreaRef}
-          className="h-full min-h-0 overflow-y-auto overscroll-contain touch-pan-y p-4"
+          className="chatbot-message-scroll h-full min-h-0 overflow-y-auto overscroll-contain touch-pan-y px-4 py-5 sm:px-5"
         >
-          <div className="space-y-4">
+          <div className="mx-auto w-full max-w-2xl space-y-4">
             {messages.map((message) => (
               <div
                 key={message.id}
                 className={cn(
-                  "flex w-max max-w-xs flex-col gap-2 rounded-lg px-3 py-2 text-sm",
+                  "chatbot-message flex w-max max-w-[88%] flex-col gap-2 rounded-2xl px-3.5 py-3 text-sm shadow-sm sm:max-w-[82%]",
                   message.sender === "user"
-                    ? "bg-primary text-primary-foreground ml-auto"
-                    : "bg-muted text-foreground",
+                    ? "chatbot-user-message ml-auto text-white"
+                    : "chatbot-bot-message text-foreground",
                 )}
               >
                 <div className="flex items-start space-x-2">
@@ -234,7 +234,7 @@ const Chatbot: React.FC = () => {
                       <AvatarFallback>Jarvis</AvatarFallback>
                     </Avatar>
                   )}
-                  <div className="max-w-xs flex-1 md:max-w-sm">
+                  <div className="min-w-0 max-w-xs flex-1 md:max-w-sm">
                     <div className="flex items-center gap-2">
                       <div className="prose prose-sm dark:prose-invert max-w-none flex-1">
                         {message.text ? (
@@ -318,19 +318,20 @@ const Chatbot: React.FC = () => {
       </ExpandableChatBody>
 
       <ExpandableChatFooter>
-        <div className="flex space-x-2">
+        <div className="chatbot-composer flex items-center gap-2 rounded-2xl border p-2">
           <Input
             placeholder="Ask anything about me that you want to know..."
             value={newMessage}
             onChange={(e) => setNewMessage(e.target.value)}
             onKeyPress={handleKeyPress}
             disabled={isLoading}
-            className="flex-1"
+            className="h-10 flex-1 border-0 bg-transparent px-2 shadow-none focus-visible:ring-0"
           />
           <Button
             size="sm"
             onClick={handleSendMsg}
             disabled={!newMessage.trim() || isLoading}
+            className="h-10 w-10 shrink-0 rounded-xl"
           >
             {isLoading ? (
               <div className="h-4 w-4 animate-spin rounded-full border-2 border-current border-t-transparent" />

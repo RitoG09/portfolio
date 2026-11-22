@@ -163,6 +163,93 @@
   @apply text-[#909092] dark:text-[#909092];
 }
 
+/* Indian-inspired chat styling: saffron, ivory, green, and a quiet chakra-like texture. */
+.chatbot-panel {
+  --chat-saffron: #e87817;
+  --chat-green: #138808;
+  --chat-ink: #172033;
+  border-color: color-mix(in srgb, var(--chat-saffron) 28%, #d8d2c5);
+  background-color: #fffaf0;
+  background-image:
+    radial-gradient(circle at 88% 6%, color-mix(in srgb, var(--chat-saffron) 13%, transparent) 0 2px, transparent 2.5px),
+    radial-gradient(circle at 12% 88%, color-mix(in srgb, var(--chat-green) 11%, transparent) 0 2px, transparent 2.5px),
+    linear-gradient(135deg, color-mix(in srgb, var(--chat-saffron) 4%, transparent), transparent 42%),
+    linear-gradient(315deg, color-mix(in srgb, var(--chat-green) 4%, transparent), transparent 45%);
+  background-size: 18px 18px, 22px 22px, auto, auto;
+  color: var(--chat-ink);
+}
+
+.dark .chatbot-panel {
+  --chat-saffron: #ffad5a;
+  --chat-green: #63c85a;
+  --chat-ink: #f8fafc;
+  border-color: color-mix(in srgb, var(--chat-saffron) 30%, #334155);
+  background-color: #111827;
+  background-image:
+    radial-gradient(circle at 88% 6%, color-mix(in srgb, var(--chat-saffron) 14%, transparent) 0 2px, transparent 2.5px),
+    radial-gradient(circle at 12% 88%, color-mix(in srgb, var(--chat-green) 12%, transparent) 0 2px, transparent 2.5px),
+    linear-gradient(135deg, color-mix(in srgb, var(--chat-saffron) 6%, transparent), transparent 42%),
+    linear-gradient(315deg, color-mix(in srgb, var(--chat-green) 6%, transparent), transparent 45%);
+}
+
+.chatbot-header {
+  border-color: color-mix(in srgb, var(--chat-saffron) 24%, transparent);
+  background: linear-gradient(
+    110deg,
+    color-mix(in srgb, var(--chat-saffron) 17%, transparent),
+    color-mix(in srgb, white 55%, transparent) 46%,
+    color-mix(in srgb, var(--chat-green) 14%, transparent)
+  );
+}
+
+.dark .chatbot-header {
+  background: linear-gradient(
+    110deg,
+    color-mix(in srgb, var(--chat-saffron) 20%, transparent),
+    color-mix(in srgb, #111827 72%, transparent) 46%,
+    color-mix(in srgb, var(--chat-green) 18%, transparent)
+  );
+}
+
+.chatbot-message-scroll {
+  scrollbar-gutter: stable;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+.chatbot-bot-message {
+  border: 1px solid color-mix(in srgb, var(--chat-saffron) 16%, #d8d2c5);
+  background: color-mix(in srgb, white 82%, var(--chat-saffron) 5%);
+}
+
+.dark .chatbot-bot-message {
+  border-color: color-mix(in srgb, var(--chat-saffron) 18%, #334155);
+  background: color-mix(in srgb, #1e293b 86%, var(--chat-green) 7%);
+}
+
+.chatbot-user-message {
+  background: linear-gradient(135deg, #d96516, #e78b25 52%, #138808);
+}
+
+.chatbot-footer {
+  border-color: color-mix(in srgb, var(--chat-green) 22%, transparent);
+  background: color-mix(in srgb, #fffaf0 88%, var(--chat-green) 4%);
+}
+
+.dark .chatbot-footer {
+  background: color-mix(in srgb, #111827 90%, var(--chat-green) 5%);
+}
+
+.chatbot-composer {
+  border-color: color-mix(in srgb, var(--chat-saffron) 25%, #d8d2c5);
+  background: color-mix(in srgb, white 74%, transparent);
+}
+
+.dark .chatbot-composer {
+  border-color: color-mix(in srgb, var(--chat-saffron) 30%, #334155);
+  background: color-mix(in srgb, #0f172a 82%, transparent);
+}
+
 /* Brand treatments for the primary social links in the profile header. */
 .social-link {
   --social-color: #64748b;

@@ -105,7 +105,12 @@ ExpandableChatHeader.displayName = "ExpandableChatHeader";
 const ExpandableChatBody: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
   className,
   ...props
-}) => <div className={cn("grow overflow-y-auto", className)} {...props} />;
+}) => (
+  <div
+    className={cn("min-h-0 grow overflow-hidden", className)}
+    {...props}
+  />
+);
 
 ExpandableChatBody.displayName = "ExpandableChatBody";
 

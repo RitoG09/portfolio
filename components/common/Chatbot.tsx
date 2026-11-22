@@ -218,7 +218,10 @@ const Chatbot: React.FC = () => {
       </ExpandableChatHeader>
 
       <ExpandableChatBody>
-        <ScrollArea ref={scrollAreaRef} className="h-full p-4">
+        <ScrollArea
+          ref={scrollAreaRef}
+          className="h-full min-h-0 overscroll-contain p-4"
+        >
           <div className="space-y-4">
             {messages.map((message) => (
               <div

@@ -1,6 +1,6 @@
 export const githubConfig = {
   username: "ritog09",
-  apiUrl: "https://github-contributions-api.deno.dev",
+  apiUrl: "https://github-contributions-api.jogruber.de/v4",
 
   // Display settings
   title: "GitHub Activity",
@@ -65,3 +65,4 @@ export const githubConfig = {
     description: "Fetching your GitHub activity data",
   },
 };
+
